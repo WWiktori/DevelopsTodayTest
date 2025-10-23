@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# React Components Library with Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A library of reusable React components built with TypeScript and Storybook.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+# Install dependencies
+npm install
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Run Storybook
+npm run storybook
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Storybook will be available at: `http://localhost:6006`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Components
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 1. Input
+
+Smart input component with password visibility toggle and clear button.
+
+**Features:**
+
+- Multiple types: `text`, `password`, `number`, `email`
+- Password visibility toggle with eye icon
+- Optional clear button (`clearable` prop)
+- Error and helper text support
+
+![Text Input Clearable](./screenshots/Components/Input/Text%20Input%20Clearable.png)
+![Password Input](./screenshots/Components/Input/Password%20Input.png)
+![Input Error](./screenshots/Components/Input/With%20Error.png)
+
+---
+
+### 2. Toast
+
+Notification component with smooth animations.
+
+**Features:**
+
+- 4 types: `success`, `error`, `warning`, `info`
+- Auto-close with configurable duration
+- Slide-in/out animations from bottom right
+- Manual close option
+
+![Toast Success](./screenshots/Feedback/Toast/Success.png)
+![Toast Error](./screenshots/Feedback/Toast/Error.png)
+![Toast Warning](./screenshots/Feedback/Toast/Warning.png)
+![Toast Info](./screenshots/Feedback/Toast/Info.png)
+
+---
+
+### 3. SidebarMenu
+
+Sidebar menu with multi-level navigation.
+
+**Features:**
+
+- Unlimited nesting levels
+- Smooth slide-in animation from right
+- Accordion-style expandable submenus
+- Backdrop click to close
+- Custom icons support
+
+![Sidebar Simple](./screenshots/Navigation/SidebarMenu/Simple%20Single%20Level.png)
+![Sidebar Two Levels](./screenshots/Navigation/SidebarMenu/Two%20Level%20Menu.png)
+![Sidebar Multi Level](./screenshots/Navigation/SidebarMenu/Multi%20Level%20Menu.png)
+
+---
+
+## 📸 Storybook Interface
+
+![Storybook Interface](./screenshots/storybook-interface.png)
+
+All components are fully documented in Storybook with interactive controls, multiple usage examples, and accessibility features.
+
