@@ -64,7 +64,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className={`${styles.inputWrapper} ${className || ''}`}>
       {label && <label className={styles.label}>{label}</label>}
-      
+
       <div className={`${styles.inputContainer} ${error ? styles.error : ''}`}>
         <input
           {...props}
@@ -82,11 +82,7 @@ export const Input: React.FC<InputProps> = ({
               className={styles.iconButton}
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
-              {showPassword ? (
-                <EyeOffIcon />
-              ) : (
-                <EyeIcon />
-              )}
+              {showPassword ? <EyeOffIcon /> : <EyeIcon />}
             </button>
           )}
 
@@ -159,4 +155,3 @@ const ClearIcon = () => (
     <line x1="9" y1="9" x2="15" y2="15" />
   </svg>
 );
-
